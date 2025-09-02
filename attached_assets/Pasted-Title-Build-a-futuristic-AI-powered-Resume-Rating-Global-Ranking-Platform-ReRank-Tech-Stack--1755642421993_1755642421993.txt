@@ -1,0 +1,134 @@
+Title:
+Build a futuristic AI-powered Resume Rating & Global Ranking Platform (ReRank)
+
+Tech Stack:
+
+Frontend: React + TailwindCSS + Framer Motion (futuristic, minimal, animated)
+
+Backend: FastAPI (Python) or Node.js (Express) → handles resume scoring, rankings, and AI integration
+
+Database: SQLite (dev) → upgradeable to PostgreSQL
+
+Deployment: Full-stack monorepo on Replit
+
+Core Features:
+
+AI-Powered Resume Rating System
+
+Resume score: 900–3500+ points
+
+Each career parameter also rated 900–3500+:
+
+Skills Score (per tech stack)
+
+Certifications Score
+
+Experience Score (by job role type)
+
+Industry Alignment Score
+
+Final AI-powered weighted formula:
+
+Resume Score = 0.4 * Skills + 0.2 * Certifications + 0.3 * Experience + 0.1 * Industry
+
+
+Dynamic recalibration: rating adjusts based on resume improvements.
+
+Ranking Types:
+
+Skills Ranking: Compare across candidates for each skill
+
+Experience Ranking: Compare across specific roles (e.g., Backend Dev, ML Engineer)
+
+Industry Ranking: Candidates optimized for specific industries (e.g., Finance, Consulting, Tech)
+
+Global Rankings: leaderboard across all users
+
+Regional/National Rankings: leaderboard filtered by geography
+
+Candidate-Facing Screens:
+
+Leaderboard Screen: Global + Regional leaderboards (interactive, futuristic, scrollable with animations)
+
+Candidate Profile Popup (Modal):
+
+Avatar + futuristic profile card
+
+Resume Score (900–3500+)
+
+Breakdown by Skills, Certifications, Experience, Industry
+
+Graphical Radar/Bar Chart visualization
+
+Gamification: Badge system (Rising Talent, Elite Pro, Top 1%)
+
+Recruiter Dashboard Screen:
+
+Search candidates by skill, experience, industry
+
+View ranked candidates sorted by AI rating
+
+Quick “Profile Snapshot Modal” with scores + highlights
+
+Export shortlist as CSV
+
+UI/UX Design Style:
+
+Inspired by Figma, Dribbble futuristic dashboards, Duolingo leaderboards, and Valorant UI aesthetics
+
+Minimalistic, yet futuristic: glowing neon accents, glassmorphism, soft shadows, animated transitions
+
+TailwindCSS dark theme with accent gradients (blue/purple/neon cyan)
+
+Framer Motion transitions for modals, score updates, and leaderboard animations
+
+Mock Resume Parser & AI Rating Engine (MVP)
+
+Backend API accepts uploaded resume (PDF/text)
+
+Mock parser extracts Skills, Certifications, Experience, Industry keywords
+
+AI Scoring function → assigns each parameter score in 900–3500+ range
+
+Aggregates into final Resume Score
+
+Returns JSON:
+
+{
+  "resume_score": 2780,
+  "skills_score": 3100,
+  "certifications_score": 2600,
+  "experience_score": 2900,
+  "industry_score": 2400
+}
+
+
+Data Visualization:
+
+Use Recharts (Radar chart + Bar chart) for candidate breakdown
+
+Animated Leaderboard (with rank numbers shifting smoothly)
+
+🛠️ Deliverables from Replit AI
+
+Frontend (React):
+
+/src/components/Leaderboard.tsx (Candidate Leaderboard screen)
+
+/src/components/ProfileModal.tsx (Candidate Profile popup with radar chart)
+
+/src/components/RecruiterDashboard.tsx (Recruiter view with filters)
+
+Backend (FastAPI or Node):
+
+/api/rate_resume → Accept resume → Return scores (900–3500+)
+
+/api/get_leaderboard → Return ranked candidate list
+
+/api/get_candidate/:id → Return detailed profile
+
+Database Schema (SQLite/Postgres):
+
+candidates(id, name, region, skills_score, certs_score, exp_score, industry_score, resume_score, rank_global, rank_regional)
+
+Seed Data: Generate 20+ mock candidates with futuristic scores to make leaderboard feel real.

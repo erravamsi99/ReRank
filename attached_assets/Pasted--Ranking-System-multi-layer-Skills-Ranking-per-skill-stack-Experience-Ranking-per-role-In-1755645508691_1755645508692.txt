@@ -1,0 +1,77 @@
+🧩 Ranking System (multi-layer)
+
+Skills Ranking (per skill/stack), Experience Ranking (per role), Industry Ranking, plus Global / National / Regional leaderboards.
+
+All ratings use 900–3500+ (Codeforces/Elo style).
+
+Gamification: tier badges (Bronze → Diamond), Top 1% flag, Rising Star—subtle, corporate-friendly.
+
+🎨 Design Direction (blend these inspirations)
+
+Base UI (credibility): LinkedIn — grid layout, whitespace, enterprise typography, sober colors.
+
+Rating System (clarity): Chess.com + LeetCode — Elo scale, tiers, clean rank chips.
+
+Leaderboard (light gamification): Duolingo — progress bars/badges, but subdued colors.
+
+Profiles (polish): Behance/Dribbble — elegant cards, visual tiles for key stats.
+
+Recruiter Analytics: Strava — trend lines, deltas, activity-style insights.
+
+Visual System
+
+Light mode first; optional dark mode.
+
+Palette:
+
+Background #F9FAFB (light) / #111827 (dark)
+
+Primary #2563EB (trust blue)
+
+Accents #10B981 (positive), #F59E0B (warn), #6B7280 (muted text)
+
+Type: Inter (or IBM Plex Sans).
+
+Components: rounded-lg cards, soft shadows, 1px dividers, no neon/glow.
+
+Motion: Framer Motion micro-transitions (fade/slide), no flashy effects.
+
+🖥️ Screens (minimum)
+
+Leaderboard (Global Talent Index)
+
+Filters: Region, Country, Industry, Skill, Role, Experience level.
+
+Table: Rank, Name/Avatar, ReRank Score (900–3500+), Key Skills, Location, Tier chip.
+
+Row hover → Quick View Modal with sub-ratings + tiny trend sparkline.
+
+Recruiter Dashboard
+
+KPIs (total candidates, avg score, top 1% count, shortlist rate).
+
+Cohort charts (score distribution, skill heatmap, pipeline conversion).
+
+“Smart Picks” (AI suggestions + Hidden Gems).
+
+Compare candidates side-by-side. Export shortlist CSV.
+
+Candidate Profile Modal / Page
+
+Header tile: avatar, headline, location, ReRank Score + tier.
+
+Tiles: Skills Rating, Experience Rating, Certifications, Industry Fit (each 900–3500+).
+
+Growth: 12-month rating line chart; percentile vs region/industry.
+
+CTA: “Improve Score” with AI tips.
+
+Upload Resume
+
+Drag-drop (PDF/DOCX).
+
+Parse → preview → run scoring → save versioned profile.
+
+Auth & Settings
+
+Email/Google/LinkedIn sign-in; basic profile; region/industry preferences.

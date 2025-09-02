@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light theme (LinkedIn-inspired) */
+  --background: hsl(210, 11%, 96%);
+  --foreground: hsl(240, 10%, 15%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(240, 10%, 15%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(240, 10%, 15%);
+  --primary: hsl(213, 94%, 68%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(210, 40%, 96%);
+  --secondary-foreground: hsl(240, 10%, 15%);
+  --muted: hsl(210, 40%, 96%);
+  --muted-foreground: hsl(240, 5%, 45%);
+  --accent: hsl(210, 40%, 94%);
+  --accent-foreground: hsl(240, 10%, 15%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(214, 32%, 91%);
+  --ring: hsl(213, 94%, 68%);
+  --chart-1: hsl(213, 94%, 68%);
+  --chart-2: hsl(142, 71%, 45%);
+  --chart-3: hsl(38, 92%, 50%);
+  --chart-4: hsl(17, 88%, 40%);
+  --chart-5: hsl(271, 91%, 65%);
+  
+  /* Professional color palette */
+  --trust-blue: hsl(213, 94%, 68%);
+  --positive-green: hsl(142, 71%, 45%);
+  --warning-amber: hsl(38, 92%, 50%);
+  --muted-gray: hsl(240, 5%, 45%);
+  --surface: hsl(0, 0%, 100%);
+  --surface-hover: hsl(210, 40%, 98%);
+  --divider: hsl(214, 32%, 91%);
+  
+  --font-inter: 'Inter', sans-serif;
+  --radius: 0.5rem;
+}
+
+.dark {
+  /* Dark theme option */
+  --background: hsl(240, 10%, 8%);
+  --foreground: hsl(0, 0%, 95%);
+  --card: hsl(240, 10%, 11%);
+  --card-foreground: hsl(0, 0%, 95%);
+  --popover: hsl(240, 10%, 11%);
+  --popover-foreground: hsl(0, 0%, 95%);
+  --primary: hsl(213, 94%, 68%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(240, 10%, 15%);
+  --secondary-foreground: hsl(0, 0%, 95%);
+  --muted: hsl(240, 10%, 15%);
+  --muted-foreground: hsl(240, 5%, 65%);
+  --accent: hsl(240, 10%, 15%);
+  --accent-foreground: hsl(213, 94%, 68%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 10%, 20%);
+  --input: hsl(240, 10%, 15%);
+  --ring: hsl(213, 94%, 68%);
+  
+  --trust-blue: hsl(213, 94%, 68%);
+  --positive-green: hsl(142, 71%, 45%);
+  --warning-amber: hsl(38, 92%, 50%);
+  --muted-gray: hsl(240, 5%, 65%);
+  --surface: hsl(240, 10%, 11%);
+  --surface-hover: hsl(240, 10%, 15%);
+  --divider: hsl(240, 10%, 20%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-inter);
+    background: var(--background);
+    overflow-x: hidden;
+    line-height: 1.5;
+  }
+}
+
+@layer components {
+  .linkedin-card {
+    @apply bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm;
+  }
+  
+  .linkedin-card:hover {
+    @apply shadow-md;
+  }
+  
+  .professional-btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+    @apply disabled:pointer-events-none disabled:opacity-50;
+  }
+  
+  .btn-primary {
+    @apply professional-btn bg-blue-600 text-white hover:bg-blue-700;
+    @apply focus-visible:ring-blue-500;
+  }
+  
+  .btn-secondary {
+    @apply professional-btn bg-gray-100 text-gray-900 hover:bg-gray-200;
+    @apply dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700;
+  }
+  
+  .score-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .score-high {
+    @apply score-badge bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200;
+  }
+  
+  .score-medium {
+    @apply score-badge bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200;
+  }
+  
+  .score-low {
+    @apply score-badge bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200;
+  }
+  
+  .tier-bronze {
+    @apply score-badge bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200;
+  }
+  
+  .tier-silver {
+    @apply score-badge bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200;
+  }
+  
+  .tier-gold {
+    @apply score-badge bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200;
+  }
+  
+  .tier-diamond {
+    @apply score-badge bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200;
+  }
+}
+
+@layer utilities {
+  .text-trust-blue {
+    color: var(--trust-blue);
+  }
+  
+  .text-positive-green {
+    color: var(--positive-green);
+  }
+  
+  .text-warning-amber {
+    color: var(--warning-amber);
+  }
+  
+  .text-muted-gray {
+    color: var(--muted-gray);
+  }
+  
+  .bg-surface {
+    background-color: var(--surface);
+  }
+  
+  .bg-surface-hover {
+    background-color: var(--surface-hover);
+  }
+  
+  .border-divider {
+    border-color: var(--divider);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, var(--trust-blue), var(--positive-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(0, 245, 255, 0.8);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neon-cyan);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-purple);
+}
